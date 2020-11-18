@@ -3,7 +3,7 @@
 ## Table of Content
 
 1. [About](#about)
-1. [Link to the site](#libk-to-the-site)
+1. [Link to the site](#link-to-the-site)
 1. [What's the use](#whats-the-use)
 
 ## About
