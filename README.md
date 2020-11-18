@@ -7,8 +7,8 @@
 
 ## About
 
-This a simple relaxing game made with the use of only HTML, CSS and JavaScript. Here you you will controll a box with the help of in-game joystick. You can even change the shape and color of the box.
+This a simple relaxing game made with the use of only HTML, CSS and JavaScript. Here you will control a box with the help of in-game joystick. You can even change the shape and colour of the box.
 
 ## What's the use
 
-This will relax you mind with it's minimal look and smoothness.
+This will relax your mind with its minimal look and smoothness.
