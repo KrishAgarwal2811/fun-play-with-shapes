@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#par {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+#box {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: #444;
+  transition: border-radius 1.5s, top 0.3s, left 0.3s, background 1s;
+  border-radius: 2px;
+}
+#control button {
+  border: none;
+  border-radius: 50%;
+  font-size: 25px;
+  height: 60px;
+  width: 60px;
+  outline: none;
+  position: absolute;
+}
+button::focus {
+  outline: none;
+}
+#control {
+  position: fixed;
+  bottom: 55px;
+  left: 2px;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+}
+#control::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  height: 100px;
+  width: 100px;
+  background: #bbb;
+  border-radius: 22px;
+}
+#left {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#up {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+#down {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+/* shapes */
+#shapes {
+  position: fixed;
+  bottom: 55px;
+  right: 10px;
+}
+#shapes button {
+  border: none;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  outline: none;
+}
+#square {
+  border-radius: 2px !important;
+}
+#topcir {
+  border-radius: 50% 50% 2px 2px !important;
+}
+#bottcir {
+  border-radius: 2px 2px 50% 50% !important;
+}
+
+/* color   */
+
+#color {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: pink;
+}
+#color div {
+  height: 100%;
+  width: 20%;
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0px;
+  float: left;
+}
+#c1 {
+  background: #101357;
+}
+#c2 {
+  background: #bf4aa8;
+}
+#c3 {
+  background: #4f5f76;
+}
+#c4 {
+  background: #8bf0ba;
+}
+#c5 {
+  background: #f7c331;
+}
+
+@media only screen and (min-width: 750px) {
+  #control {
+    margin-left: 2vh;
+  }
+
+  #shapes {
+    margin-right: 2vh;
+  }
+}
