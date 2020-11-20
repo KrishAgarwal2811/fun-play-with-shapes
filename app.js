@@ -9,6 +9,17 @@ let isTouchScreen =
   navigator.msMaxTouchPoints > 0;
 
 window.onload = () => {
+  const el = document.createElement("div");
+  el.innerHTML =
+    "For controls see the <a target='_blank' href='https://github.com/KrishAgarwal2811/fun-play-with-shapes#how-to-play'>docs</a>";
+  el.style.color = "grey";
+
+  swal({
+    title: "Info",
+    icon: "info",
+    content: el,
+  });
+
   // FOR MOBILES
 
   if (isTouchScreen) {
@@ -32,8 +43,110 @@ window.onload = () => {
     document.querySelector("#down").addEventListener("mouseup", cancelDown);
     document.querySelector("#right").addEventListener("mouseup", cancelRight);
     document.querySelector("#left").addEventListener("mouseup", cancelLeft);
+
+    document.body.addEventListener("keydown", (e) => {
+      keypressed(e);
+    });
   }
+  document.body.addEventListener("keyup", (e) => {
+    keyreleased(e);
+  });
 };
+
+let running = false;
+
+function keypressed(e) {
+  let key = e.which || e.keyCode;
+
+  // left arrow = 37
+  // top arrow = 38
+  // right arrow = 39
+  // down arrow = 40
+
+  if (!running) {
+    running = true;
+
+    document.querySelector("#control").style.opacity = "0.3";
+    let joy_child = document.querySelectorAll("#control button");
+    joy_child.forEach((elem) => {
+      elem.setAttribute("disabled", true);
+    });
+    switch (key) {
+      case 37:
+        leftInt = setInterval(() => {
+          box = document.getElementById("box");
+          lef--;
+          box.style.left = lef * 2 + "%";
+        }, 100);
+        break;
+
+      case 38:
+        upInt = setInterval(() => {
+          box = document.getElementById("box");
+          dow--;
+          box.style.top = dow * 2 + "%";
+        }, 100);
+        break;
+
+      case 39:
+        rightInt = setInterval(() => {
+          box = document.getElementById("box");
+          lef++;
+          box.style.left = lef * 2 + "%";
+        }, 100);
+        break;
+
+      case 40:
+        downInt = setInterval(() => {
+          box = document.getElementById("box");
+          dow++;
+          box.style.top = dow * 2 + "%";
+        }, 100);
+        break;
+
+      default:
+        break;
+    }
+  }
+}
+
+function keyreleased(e) {
+  let key = e.which || e.keyCode;
+
+  // left arrow = 37
+  // top arrow = 38
+  // right arrow = 39
+  // down arrow = 40
+
+  running = false;
+
+  document.querySelector("#control").style.opacity = "1";
+  let joy_child = document.querySelectorAll("#control button");
+  joy_child.forEach((elem) => {
+    elem.removeAttribute("disabled");
+  });
+
+  switch (key) {
+    case 37:
+      cancelLeft();
+      break;
+
+    case 38:
+      cancelUp();
+      break;
+
+    case 39:
+      cancelRight();
+      break;
+
+    case 40:
+      cancelDown();
+      break;
+
+    default:
+      break;
+  }
+}
 
 function up(e) {
   e.preventDefault();
