@@ -1,5 +1,6 @@
 var lef = 0;
 var dow = 0;
+let interval = 7;
 
 let upInt, downInt, rightInt, leftInt;
 
@@ -75,32 +76,32 @@ function keypressed(e) {
       case 37:
         leftInt = setInterval(() => {
           box = document.getElementById("box");
-          lef--;
-          box.style.left = lef * 2 + "%";
+          lef -= interval;
+          box.style.left = lef * 2 + "px";
         }, 100);
         break;
 
       case 38:
         upInt = setInterval(() => {
           box = document.getElementById("box");
-          dow--;
-          box.style.top = dow * 2 + "%";
+          dow -= interval;
+          box.style.top = dow * 2 + "px";
         }, 100);
         break;
 
       case 39:
         rightInt = setInterval(() => {
           box = document.getElementById("box");
-          lef++;
-          box.style.left = lef * 2 + "%";
+          lef += interval;
+          box.style.left = lef * 2 + "px";
         }, 100);
         break;
 
       case 40:
         downInt = setInterval(() => {
           box = document.getElementById("box");
-          dow++;
-          box.style.top = dow * 2 + "%";
+          dow += interval;
+          box.style.top = dow * 2 + "px";
         }, 100);
         break;
 
@@ -152,8 +153,8 @@ function up(e) {
   e.preventDefault();
   upInt = setInterval(() => {
     box = document.getElementById("box");
-    dow--;
-    box.style.top = dow * 2 + "%";
+    dow -= interval;
+    box.style.top = dow * 2 + "px";
   }, 100);
 }
 
@@ -165,8 +166,8 @@ function down(e) {
   e.preventDefault();
   downInt = setInterval(() => {
     box = document.getElementById("box");
-    dow++;
-    box.style.top = dow * 2 + "%";
+    dow += interval;
+    box.style.top = dow * 2 + "px";
   }, 100);
 }
 
@@ -178,8 +179,8 @@ function right(e) {
   e.preventDefault();
   rightInt = setInterval(() => {
     box = document.getElementById("box");
-    lef++;
-    box.style.left = lef * 2 + "%";
+    lef += interval;
+    box.style.left = lef * 2 + "px";
   }, 100);
 }
 
@@ -191,8 +192,8 @@ function left(e) {
   e.preventDefault();
   leftInt = setInterval(() => {
     box = document.getElementById("box");
-    lef--;
-    box.style.left = lef * 2 + "%";
+    lef -= interval;
+    box.style.left = lef * 2 + "px";
   }, 100);
 }
 
